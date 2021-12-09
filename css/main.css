@@ -1,0 +1,147 @@
+/* USER VARIABLES SECTION */
+
+:root {
+	--accent: #ffd523;
+	--fontsize: 16px;
+	--textcolor: #b2b1b9;
+	--lineheight: 1.65;
+	--userfont: roboto-st, sans-serif;
+	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+	--bg: #2c2e43;
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
+.row, .row > * { --bs-gutter-x: 1.25rem; }
+
+/* FONTS LOAD SECTION */
+
+@font-face { src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/roboto-italic-webfont.woff2") format("woff2"); font-family: "roboto-italic"; font-weight: 400; font-style: italic; }
+@font-face { src: url("../fonts/roboto-bold-webfont.woff2") format("woff2"); font-family: "roboto-bold"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2"); font-family: "roboto-bi"; font-weight: 700; font-style: italic; }
+@font-face { src: url("../fonts/dosis-v22-latin-ext_latin-regular.woff2") format("woff2"); font-family: "dosis-regular"; font-weight: 400; font-style: normal; }
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder { color: #666; }
+::selection { background-color: var(--accent); color: #fff; }
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+body {
+	font-family: var(--userfont);
+	font-size: var(--fontsize);
+	line-height: var(--lineheight);
+	color: var(--textcolor);
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	background-color: var(--bg);
+	background-image: url("../images/pexels-craig-adderley-1503520.jpg");
+	background-position: center;
+}
+
+/* USER STYLES */
+
+.image {
+	max-width: 100%;
+	margin-bottom: var(--bs-gutter-x);
+	border-radius: 4px;
+}
+
+.accent {
+	color: var(--accent);
+	font-weight: bold;
+}
+
+.h100 {
+	min-height: 100%;
+}
+
+/* TIMER */
+
+.timer-container {
+	margin-bottom: 100px;
+	margin-top: 50px;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+
+	transition: .5s ease;
+}
+
+.timer-title {
+	font-size: 40px;
+	text-align: center;
+	padding-bottom: 50px;
+	padding: 10px;
+	color: #000;
+}
+
+.counter {
+	display: flex;
+	justify-content: space-around;
+
+	animation: timer_show 3s;
+}
+
+.counter-item {
+	font-family: dosis-regular, sans-serif;
+	font-size: 50px;
+	position: relative;
+
+	text-align: center;
+	width: 100%;
+	color: var(--bg);
+}
+
+.days::after {
+	content: "дни";
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 55px;
+}
+.hours::after {
+	content: "часы";
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 55px;
+}
+.minutes::after {
+	content: "минуты";
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 55px;
+}
+.seconds::after {
+	content: "секунды";
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 55px;
+}
+
+.has_come {
+	background-color: rgba(0, 255, 0, 0.7);
+}
+
+/* MAIN */
+
